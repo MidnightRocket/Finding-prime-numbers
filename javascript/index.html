@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="" id="primeContainer">
+      2
+    </div>
+    <script type="text/javascript">
+      function isPrime(number){
+        if (number == 1 || number == 0){
+          return false;
+        } else if (number == 2) {
+          //return true;
+        }
+
+        for (var i = 2; i < Math.floor(number**0.5+1); i++) {
+          if (number % i == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function makePrimeList(numberOfPrimes, startFrom = 2){
+        var output = new Array();
+        for (var i = startFrom; numberOfPrimes > 0; i++) {
+          if (isPrime(i)) {
+            output.push(i);
+            document.getElementById('primeContainer').innerHTML = i;
+            numberOfPrimes--;
+          }
+        }
+        return output;
+      }
+    </script>
+  </body>
+</html>
